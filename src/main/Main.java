@@ -9,13 +9,19 @@ public class Main {
 
 
         // Q3:
-        int[] arr = new int[] {2, 3, 4, 2, 2, 3, 5, 7};
-        int output = 4;
+        int[] input1 = new int[] {2, 3, 4, 2, 2, 3, 5, 7};
+        int expected1 = 4;
 
-        int[] inputArray = arr;
-        int q3Output = Assignment1.firstNonRepeating(inputArray);
-        System.out.println("Q3 expected: " + output);
-        System.out.println(q3Output);
+        int[] input2 = new int[] {7, 8, 4, 2, 4, 7, 8};
+        int expected2 = 2;
+
+        int Output1 = Assignment1.firstNonRepeating(input1);
+        System.out.println("Q3 expected: " + expected1);
+        System.out.println(Output1);
+
+        int Output2 = Assignment1.firstNonRepeating(input2);
+        System.out.println("Q3 expected: " + expected2);
+        System.out.println(Output2);
 
     }
 }

@@ -65,6 +65,23 @@ public class Assignment1 {
         return -1;
     }
 
+    // Q4:
+    // T: O(n); S: 0(1)
+    public boolean canConstruct(String ransomNote, String magazine) {
+        char arr[] = new char[26];
+        for (int i=0; i<magazine.length(); i++) {
+            arr[magazine.charAt(i)-'a']++;
+        }
+        for (int i=0; i<ransomNote.length(); i++) {
+            if (arr[ransomNote.charAt(i) - 'a'] != 0) {
+                arr[ransomNote.charAt(i) - 'a']--;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 
