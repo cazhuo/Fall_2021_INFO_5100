@@ -82,6 +82,23 @@ public class Assignment1 {
         return true;
     }
 
+    // Q5:
+    // T: O(n); S: O(1)
+    public static boolean isPattern(String letterDigit) {
+        int n = letterDigit.length();
+        if (n==0) return false;
+        for (int i=0; i<n; i+=2) {
+            if (Character.isDigit(letterDigit.charAt(i))
+                    && Character.isDigit(letterDigit.charAt(i + 1))) {
+                return false;
+            } else if (Character.isLetter(letterDigit.charAt(i))
+                    && Character.isLetter(letterDigit.charAt(i + 1))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 

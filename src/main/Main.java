@@ -9,19 +9,36 @@ public class Main {
 
 
         // Q3:
-        int[] input1 = new int[] {2, 3, 4, 2, 2, 3, 5, 7};
-        int expected1 = 4;
+        System.out.println("=============================");
+        int[] q3Input1 = new int[] {2, 3, 4, 2, 2, 3, 5, 7};
+        int q3Expected1 = 4;
+        System.out.println("Q3 expected: " + q3Expected1);
+        System.out.println(Assignment1.firstNonRepeating(q3Input1));
 
-        int[] input2 = new int[] {7, 8, 4, 2, 4, 7, 8};
-        int expected2 = 2;
+        int[] q3Input2 = new int[] {77, 9, 4, 2, 4, 77, 9};
+        int q3Expected2 = 2;
+        System.out.println("Q3 expected: " + q3Expected2);
+        System.out.println(Assignment1.firstNonRepeating(q3Input2));
 
-        int Output1 = Assignment1.firstNonRepeating(input1);
-        System.out.println("Q3 expected: " + expected1);
-        System.out.println(Output1);
+        // Q5:
+        System.out.println("=============================");
+        String q5Input1 = "1A3d4s5t";
+        boolean q5Expected1 = true;
+        System.out.println("Q5 expected: " + q5Expected1);
+        System.out.println(Assignment1.isPattern(q5Input1));
 
-        int Output2 = Assignment1.firstNonRepeating(input2);
-        System.out.println("Q3 expected: " + expected2);
-        System.out.println(Output2);
+        String q5Input2 = "A2bb2d4";
+        boolean q5Expected2 = false;
+        System.out.println("Q5 expected: " + q5Expected2);
+        System.out.println(Assignment1.isPattern(q5Input2));
+
+        String q5Input3 = "";
+        boolean q5Expected3 = false;
+        System.out.println("Q5 expected: " + q5Expected3);
+        System.out.println(Assignment1.isPattern(q5Input3));
+
+
+
 
     }
 }
