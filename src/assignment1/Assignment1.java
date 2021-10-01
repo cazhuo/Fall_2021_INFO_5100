@@ -6,19 +6,20 @@ import java.util.Map;
 public class Assignment1 {
 
     // Q1:
-    // T: O(n); S: O(1)
+    // T: O(n); S: O(n)
     public static int sumOfUnique(int[] nums) {
-        int[] record = new int[101];
         int sum=0;
-        for (int i=0; i<nums.length; i++) {
-            if (record[nums[i]] == 0 ) {
-                sum+=nums[i];
-                record[nums[i]]=1;
-            }else{
-                if (record[nums[i]] == 1 ) {
-                    sum-=nums[i];
-                    record[nums[i]] = 2;
-                }
+        Map<Integer, Integer> m = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!m.containsKey(nums[i])) {
+                m.put(nums[i], 1);
+                sum += nums[i];
+            } else {
+                m.put(nums[i], m.get(nums[i]) + 1);
+            }
+
+            if (m.get(nums[i]) == 2) {
+                sum -= nums[i];
             }
         }
         return sum;
