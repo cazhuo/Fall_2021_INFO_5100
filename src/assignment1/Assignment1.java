@@ -67,7 +67,7 @@ public class Assignment1 {
 
     // Q4:
     // T: O(n); S: 0(1)
-    public boolean canConstruct(String ransomNote, String magazine) {
+    public static boolean canConstruct(String ransomNote, String magazine) {
         char arr[] = new char[26];
         for (int i=0; i<magazine.length(); i++) {
             arr[magazine.charAt(i)-'a']++;
@@ -87,7 +87,7 @@ public class Assignment1 {
     public static boolean isPattern(String letterDigit) {
         int n = letterDigit.length();
         if (n==0) return false;
-        for (int i=0; i<n; i+=2) {
+        for (int i=0; i<n-1; i++) {
             if (Character.isDigit(letterDigit.charAt(i))
                     && Character.isDigit(letterDigit.charAt(i + 1))) {
                 return false;
