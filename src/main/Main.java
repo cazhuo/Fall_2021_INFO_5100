@@ -134,6 +134,50 @@ public class Main {
         System.out.println("Q6 expected: " + false);
         System.out.println("* Q6 output: " + A2_lc_Q6.isIsomorphic(q6Input2_1, q6Input2_2));
         System.out.println("------------");
+        //7
+        String q7Input1_1 = "11";
+        String q7Input1_2 = "123";
+        String q7Input2_1 = "456";
+        String q7Input2_2 = "77";
+        String q7Input3_1 = "0";
+        String q7Input3_2 = "0";
+
+        System.out.println("Q7 expected: " + "134");
+        System.out.println("* Q7 output: " + A2_lc_Q7.addStrings(q7Input1_1, q7Input1_2));
+        System.out.println("Q7 expected: " + "533");
+        System.out.println("* Q7 output: " + A2_lc_Q7.addStrings(q7Input2_1, q7Input2_2));
+        System.out.println("Q7 expected: " + "0");
+        System.out.println("* Q7 output: " + A2_lc_Q7.addStrings(q7Input3_1, q7Input3_2));
+        System.out.println("------------");
+        //8
+        String q8Input1 = "A man, a plan, a canal: Panama";
+        String q8Input2 = "race a car";
+
+        System.out.println("Q8 expected: " + true);
+        System.out.println("* Q8 output: " + A2_lc_Q8.isPalindrome(q8Input1));
+        System.out.println("Q8 expected: " + false);
+        System.out.println("* Q8 output: " + A2_lc_Q8.isPalindrome(q8Input2));
+        System.out.println("------------");
+        //9
+        String q9Input1 = "the sky is blue";
+        String q9Input2 = " Bob Loves Alice ";
+
+        System.out.println("Q9 expected: " + "blue is sky the");
+        System.out.println("* Q9 output: " + A2_lc_Q9.reverseWords(q9Input1));
+        System.out.println("Q9 expected: " + "Alice Loves Bob");
+        System.out.println("* Q9 output: " + A2_lc_Q9.reverseWords(q9Input2));
+        System.out.println("------------");
+        //10
+        char[] q10Input1 = "aabbccc".toCharArray();
+        char[] q10Input2 = "a".toCharArray();
+        char[] q10Input3 = "abbbbbbbbbbbb".toCharArray();
+
+        System.out.println("Q10 expected: " + 6);
+        System.out.println("* Q10 output: " + A2_lc_Q10.compress(q10Input1));
+        System.out.println("Q10 expected: " + 1);
+        System.out.println("* Q10 output: " + A2_lc_Q10.compress(q10Input2));
+        System.out.println("Q10 expected: " + 4);
+        System.out.println("* Q10 output: " + A2_lc_Q10.compress(q10Input3));
 
 
 

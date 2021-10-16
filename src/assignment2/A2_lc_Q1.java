@@ -3,7 +3,7 @@ package assignment2;
 public class A2_lc_Q1 {
     // T: O(m*n)
     // S: 0(m*n)
-    public int[][] transpose(int[][] matrix) {
+    public static int[][] transpose(int[][] matrix) {
         int r = matrix.length, c = matrix[0].length;
         int[][] ans = new int[c][r];
         for (int i = 0; i < r; i++) {
