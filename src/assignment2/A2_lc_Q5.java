@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class A2_lc_Q5 {
-    public List<Integer> spiralOrder(int[][] matrix) {
+    public static List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
         if(matrix.length==0 || matrix[0].length==0) return res;
         int b = matrix.length-1, r = matrix[0].length-1, t=0,l=0;

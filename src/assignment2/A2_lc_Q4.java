@@ -1,7 +1,7 @@
 package assignment2;
 
 public class A2_lc_Q4 {
-    public void rotate(int[][] matrix) {
+    public static void rotate(int[][] matrix) {
         int n = matrix.length;
 		/* What below loop does is - gets transpose of the matrix -
 		means rows value are interchanged with column values .

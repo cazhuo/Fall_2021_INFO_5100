@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class A2_lc_Q6 {
     // T: O(n)
     // S: 0(n)
-    public boolean isIsomorphic(String s, String t) {
+    public static boolean isIsomorphic(String s, String t) {
             HashMap<Character, Character> map = new HashMap<>();
             for (int i=0; i<s.length(); i++) {
                 char a = s.charAt(i);

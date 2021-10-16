@@ -3,7 +3,7 @@ package assignment2;
 public class A2_lc_Q2 {
     // T: O(m*n)
     // S: 0(1)
-    public int shortestDistance(String[] wordsDict, String word1, String word2) {
+    public static int shortestDistance(String[] wordsDict, String word1, String word2) {
         int result = Integer.MAX_VALUE;
         int a = -1;
         int b = -1;

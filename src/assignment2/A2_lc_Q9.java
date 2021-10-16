@@ -3,7 +3,7 @@ package assignment2;
 public class A2_lc_Q9 {
     // T: O(n)
     // S: 0(n)
-    public String reverseWords(String s) {
+    public static String reverseWords(String s) {
         if (s==null || s.length()==0) {
             return s;
         }

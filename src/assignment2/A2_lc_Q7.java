@@ -3,7 +3,7 @@ package assignment2;
 public class A2_lc_Q7 {
     // T: O(n)
     // S: 0(n)
-    public String addStrings(String num1, String num2) {
+    public static String addStrings(String num1, String num2) {
         StringBuilder res = new StringBuilder();
         int i = num1.length() - 1, j = num2.length() - 1;
         int carry = 0;

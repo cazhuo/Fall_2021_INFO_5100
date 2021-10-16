@@ -3,7 +3,7 @@ package assignment2;
 public class A2_lc_Q8 {
     // T: O(n)
     // S: 0(1)
-    public boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {
         int start = 0;
         int end = s.length() - 1;
         while(start <= end) {

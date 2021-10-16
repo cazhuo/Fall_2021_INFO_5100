@@ -1,17 +1,17 @@
 package main;
 
-import assignment2.Rectangle;
-import assignment2.Shape;
-import assignment2.Square;
+import assignment2.*;
+import jdk.nashorn.internal.ir.Assignment;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static <Assignment2> void main(String[] args) {
         /*
-        Q1) - 4) Use the Shape tester class to test your classes.
+        Q1. Use the Shape tester class to test your classes.
          */
         Shape shape1 = new Shape("Shape1", "pink");
         System.out.println("shape1");
@@ -39,6 +39,102 @@ public class Main {
         System.out.println("square2");
         System.out.println("area : " + square2.getArea() + " perimeter : " + square2.getPerimeter());
         System.out.println(square2.printShape());
+
+
+        System.out.println("===================================");
+        /*
+        Q2. Create a Sum class with methods to get desired output. Use the below function to test the output.
+         */
+        Sum sum = new Sum();
+        System.out.println(sum.add(2, 3)); //output : 5
+        System.out.println(sum.add(4, 9, 12));//output : 25
+        System.out.println(sum.add(4, 5.0));//output : 9.0
+        System.out.println(sum.add(15.5, 5));//output : 20.5
+        System.out.println(sum.add(1.0, 6.4));//output : 7.4
+
+
+        System.out.println("===================================");
+        /*
+        Leetcode questions test cases.
+         */
+        // 1)
+        int[][] q1Input1 = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] q1Expected1 = {{1,4,7}, {2,5,8}, {3,6,9}};
+        int[][] q1Input2 = new int[][] {{1,2,3}, {4,5,6}};
+        int[][] q1Expected2 = {{1,4}, {2,5}, {3,6}};
+
+        System.out.println("Q1 expected: " + Arrays.deepToString(q1Expected1));
+        System.out.println("* Q1 output: " + Arrays.deepToString(A2_lc_Q1.transpose(q1Input1)));
+        System.out.println("Q1 expected: " + Arrays.deepToString(q1Expected2));
+        System.out.println("* Q1 output: " + Arrays.deepToString(A2_lc_Q1.transpose(q1Input2)));
+        System.out.println("------------");
+        // 2)
+        String[] q2Input1_1 = new String[] {"practice", "makes", "perfect", "coding", "makes"};
+        String q2Input1_2 = "coding";
+        String q2Input1_3 = "practice";
+        String[] q2Input2_1 = q2Input1_1;
+        String q2Input2_2 = "makes";
+        String q2Input2_3 = "coding";
+
+        System.out.println("Q2 expected: " + 3);
+        System.out.println("* Q2 output: " + A2_lc_Q2.shortestDistance(q2Input1_1, q2Input1_2, q2Input1_3));
+        System.out.println("Q2 expected: " + 1);
+        System.out.println("* Q2 output: " + A2_lc_Q2.shortestDistance(q2Input2_1, q2Input2_2, q2Input2_3));
+        System.out.println("------------");
+        // 3)
+        int[] q3Input1 = new int[] {0,1,0,3,12};
+        int[] q3Expected1 = {1,3,12,0,0};
+        int[] q3Input2 = new int[] {0};
+        int[] q3Expected2 = {0};
+
+        System.out.println("Q3 expected: " + Arrays.toString(q3Expected1));
+        A2_lc_Q3.moveZeroes(q3Input1);
+        System.out.println("* Q3 output: " + Arrays.toString(q3Input1));
+        System.out.println("Q3 expected: " + Arrays.toString(q3Expected2));
+        A2_lc_Q3.moveZeroes(q3Input2);
+        System.out.println("* Q3 output: " + Arrays.toString(q3Input2));
+        System.out.println("------------");
+        // 4)
+        int[][] q4Input1 = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
+        int[][] q4Expected1 = {{7,4,1}, {8,5,2}, {9,6,3}};
+        int[][] q4Input2 = new int[][] {{5,1,9,11}, {2,4,8,10}, {13,3,6,7}, {15,14,12,16}};
+        int[][] q4Expected2 = {{15,13,2,5}, {14,3,4,1}, {12,6,8,9}, {16,7,10,11}};
+        int[][] q4Input3 = new int[][] {{1}};
+        int[][] q4Expected3 = {{1}};
+
+        System.out.println("Q4 expected: " + Arrays.deepToString(q4Expected1));
+        A2_lc_Q4.rotate(q4Input1);
+        System.out.println("* Q4 output: " + Arrays.deepToString(q4Input1));
+        System.out.println("Q4 expected: " + Arrays.deepToString(q4Expected2));
+        A2_lc_Q4.rotate(q4Input2);
+        System.out.println("* Q4 output: " + Arrays.deepToString(q4Input2));
+        System.out.println("Q4 expected: " + Arrays.deepToString(q4Expected3));
+        A2_lc_Q4.rotate(q4Input3);
+        System.out.println("* Q4 output: " + Arrays.deepToString(q4Input3));
+        System.out.println("------------");
+        // 5)
+        int[][] q5Input1 = new int[][] {{1,2,3}, {4,5,6}, {7,8,9}};
+        List<Integer> q5Expected1 = Arrays.asList(1,2,3,6,9,8,7,4,5);
+        int[][] q5Input2 = new int[][] {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}};
+        List<Integer> q5Expected2 = Arrays.asList(1,2,3,4,8,12,11,10,9,5,6,7);
+
+        System.out.println("Q5 expected: " + q5Expected1);
+        System.out.println("* Q5 output: " + A2_lc_Q5.spiralOrder(q5Input1));
+        System.out.println("Q5 expected: " + q5Expected2);
+        System.out.println("* Q5 output: " + A2_lc_Q5.spiralOrder(q5Input2));
+        System.out.println("------------");
+        //6
+        String q6Input1_1 = "egg";
+        String q6Input1_2 = "add";
+        String q6Input2_1 = "foo";
+        String q6Input2_2 = "bar";
+
+        System.out.println("Q6 expected: " + true);
+        System.out.println("* Q6 output: " + A2_lc_Q6.isIsomorphic(q6Input1_1, q6Input1_2));
+        System.out.println("Q6 expected: " + false);
+        System.out.println("* Q6 output: " + A2_lc_Q6.isIsomorphic(q6Input2_1, q6Input2_2));
+        System.out.println("------------");
+
 
 
 
