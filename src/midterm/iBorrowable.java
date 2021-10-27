@@ -10,5 +10,4 @@ public interface iBorrowable {
     boolean isAvailable(int day);
 
 
-
 }

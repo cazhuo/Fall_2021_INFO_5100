@@ -4,13 +4,14 @@ import java.util.HashMap;
 
 public class Midterm_Q4 {
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
 
         /*
          Input: s = "abcabcbb"
          Output: 3
          Explanation: The answer is "abc", with the length of 3.
          */
+
         if (s.length() == 0)  return 0;
 
         HashMap<Character, Integer> map = new HashMap<>();
