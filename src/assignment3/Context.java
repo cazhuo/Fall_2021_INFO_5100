@@ -9,7 +9,7 @@ public class Context {
 
 
     public int execute(int num1, int num2) {
-        return 0;
+        return operation.performOperation(num1, num2);
     }
 
 }

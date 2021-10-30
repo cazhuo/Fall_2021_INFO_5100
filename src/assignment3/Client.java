@@ -3,6 +3,7 @@ package assignment3;
 public class Client {
 
     public static void main(String[] args) {
+
         Context contextAdd = new Context(new AddOperation());
         System.out.println(contextAdd.execute(5, 15)); // Expects 20
 

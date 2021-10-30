@@ -1,7 +1,8 @@
 package main;
 
 import assignment2.*;
-import jdk.nashorn.internal.ir.Assignment;
+import midterm.Midterm_Q3;
+import midterm.Midterm_Q4;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -9,7 +10,14 @@ import java.util.List;
 
 public class Main {
 
-    public static <Assignment2> void main(String[] args) {
+    public static void main(String[] args) {
+
+        int[] array = new int[] {1,3,-1,3,4,-1,-1};
+        System.out.println(Midterm_Q3.SumOfRepeated(array));
+
+        String s1 = "abcaabcaabcaa";
+        System.out.println(Midterm_Q4.lengthOfLongestSubstring(s1));
+
         /*
         Q1. Use the Shape tester class to test your classes.
          */
