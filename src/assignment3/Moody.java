@@ -16,7 +16,7 @@ public abstract class Moody {
 
     //an object responds according to how it feels, print ”I feel Happy(or Sad) today!!”
     public void queryMood() {
-            System.out.println("I feel " + mood + " today!!");
+            System.out.println("I feel " + mood + " today");
         }
 
     }
