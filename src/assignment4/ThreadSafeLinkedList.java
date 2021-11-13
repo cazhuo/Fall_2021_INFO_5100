@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ThreadSafeLinkedList {
-    private LinkedList<Integer> list = new LinkedList<>();
-    ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
+    private LinkedList<Integer> list;
+    private ReentrantReadWriteLock lock;
 
     /*
     A ReadWriteLock maintains a pair of associated locks, one for read-only operations and one for writing.
@@ -14,15 +14,21 @@ public class ThreadSafeLinkedList {
     So you can have many readers at a time, but only one writer - and the writer will prevent readers from reading, too.
      */
 
+    public ThreadSafeLinkedList() {
+        list = new LinkedList<>();
+        lock = new ReentrantReadWriteLock();
+    }
+
+
     public void addAtPosition(int index, int element) {
         lock.writeLock().lock();
         list.add(index, element);
         lock.writeLock().unlock();
     }
 
-    public void removeAtPosition(int element){
+    public void removeAtPosition(int index){
         lock.writeLock().lock();
-        list.remove(element);
+        list.remove(index);
         lock.writeLock().unlock();
     }
 
@@ -39,7 +45,6 @@ public class ThreadSafeLinkedList {
         lock.readLock().unlock();
         return last;
     }
-
 
     public int size(){
         int size;
