@@ -26,16 +26,22 @@ public class Main {
 
         System.out.println("*** Sort by ascending order of 'name' : ***");
         Collections.sort(students, (a, b) -> a.getName().compareTo(b.getName()));
-        for (Student s : students) System.out.println(s.getName());
+        for (Student s : students) {
+            System.out.println(s.getName());
+        }
 
         System.out.println("*** Sort by descending order of 'gpa' : ***");
         Collections.sort(students, (a,b) -> (int)(b.getGpa()*10) - (int)(a.getGpa()*10));
-        for (Student s : students) System.out.println(s.getGpa());
+        for (Student s : students) {
+            System.out.println(s.getGpa());
+        }
 
 
         System.out.println("*** Sort by ascending order of 'dateOfBirth' : ***");
         Collections.sort(students, (a,b) -> a.getDateOfBirth().getYear() - b.getDateOfBirth().getYear());
-        for (Student s : students) System.out.println(s.getDateOfBirth());
+        for (Student s : students) {
+            System.out.println(s.getDateOfBirth());
+        }
     }
 
     public static Date parseDate(String date) {
