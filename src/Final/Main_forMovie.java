@@ -1,6 +1,7 @@
 package Final;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main_forMovie {
 
@@ -40,6 +41,15 @@ public class Main_forMovie {
                 .flatMap(movie -> movie.movieList.stream())
                 .filter(date -> date.releaseDate.get(Calendar.YEAR) < 2000 )
                 .forEach(title -> title.setTitle( "(Classic) " + title.getTitle()));
+
+
+        // *** Q3 *** //
+        // get the latest 3 movies released
+        List<Movie> list = netflix.getGenreList().stream()
+                .flatMap(movie -> movie.movieList.stream())
+                .collect(Collectors.toList());
+        Collections.sort(list, (a,b) -> b.releaseDate.get(Calendar.YEAR) - a.releaseDate.get(Calendar.YEAR));
+        list.stream().limit(3).forEach(movie -> {System.out.println(movie.getTitle() + " " + movie.getReleaseDate().get(Calendar.YEAR));});
 
 
         // *** Q5 *** //
