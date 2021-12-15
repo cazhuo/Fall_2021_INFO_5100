@@ -42,4 +42,9 @@ public class Movie {
         }
     }
 
+    public String addReleaseYearToTitle() {
+        this.setTitle(getReleaseDate().get(Calendar.YEAR) + this.getTitle());
+        return this.getTitle();
+    }
+
 }
