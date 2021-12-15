@@ -1,6 +1,7 @@
 package Final;
 
 import java.util.*;
+import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 
 public class Main_forMovie {
@@ -35,12 +36,14 @@ public class Main_forMovie {
         netflix.genreList.add(action);
 
 
+
         // *** Q2 *** //
         // for all movies released before 2000, add the string "(Classic)" to the title
         netflix.getGenreList().stream()
                 .flatMap(movie -> movie.movieList.stream())
                 .filter(date -> date.releaseDate.get(Calendar.YEAR) < 2000 )
                 .forEach(title -> title.setTitle( "(Classic) " + title.getTitle()));
+
 
 
         // *** Q3 *** //
@@ -52,6 +55,18 @@ public class Main_forMovie {
         list.stream().limit(3).forEach(movie -> {System.out.println(movie.getTitle() + " " + movie.getReleaseDate().get(Calendar.YEAR));});
 
 
+
+        // *** Q4 *** //
+        // create predicate for release date 1990 - 2000, and then chain the predicates for finding movies
+        IntPredicate intPredicate = (x) ->
+        {
+            if (x > 1990 && x < 2000)
+                return true;
+            return false;
+        };
+
+
+
         // *** Q5 *** //
         // write method to add release year to title and return title, use this method for all movies
         for (Genre g : netflix.getGenreList()) {
@@ -59,6 +74,7 @@ public class Main_forMovie {
                 m.addReleaseYearToTitle();
             }
         }
+
 
 
         // *** Q6 *** //
