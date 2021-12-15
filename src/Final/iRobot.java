@@ -9,6 +9,10 @@ public interface iRobot {
 
     void clean();
 
-    enum Direction {UP, DOWN, LEFT, RIGHT}
-
+    enum Direction {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
+    }
 }
