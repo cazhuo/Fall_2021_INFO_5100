@@ -1,8 +1,7 @@
 package Final;
 
-import java.util.Comparator;
+import java.util.*;
 import java.util.GregorianCalendar;
-import java.util.List;
 
 public class Movie {
     String title;
@@ -19,6 +18,10 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public GregorianCalendar getReleaseDate() {
