@@ -47,12 +47,7 @@ public class Main_forMovie {
         // *** Q6 *** //
         // sort by title
         for (Genre g : netflix.getGenreList()){
-            Collections.sort(g.getMovieList(), new Comparator<Movie>() {
-                @Override
-                public int compare(Movie m1, Movie m2) {
-                    return m1.getTitle().compareTo(m2.getTitle());
-                }
-            });
+            Collections.sort(g.getMovieList(), new Movie.TitleComparator());
         }
 
 
