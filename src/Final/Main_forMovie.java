@@ -7,6 +7,8 @@ import java.util.GregorianCalendar;
 public class Main_forMovie {
 
     public static void main(String[] args) {
+        // *** Q1 *** //
+        // initial setup
         Netflix netflix = new Netflix("Netflix");
 
         // generate genres
@@ -36,6 +38,13 @@ public class Main_forMovie {
         // add genre to Netflix
         netflix.genreList.add(fiction);
         netflix.genreList.add(action);
+
+        // *** Q2 *** //
+        // or all movies released before 2000, add the string "(Classic)" to the title
+        netflix.getGenreList().stream()
+                .flatMap(movie -> movie.movieList.stream())
+                .filter(date -> date.releaseDate.get(Calendar.YEAR) < 2000 )
+                .forEach(title -> title.setTitle( "Classic " + title.getTitle()));
 
     }
 
