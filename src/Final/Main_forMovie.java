@@ -73,7 +73,6 @@ public class Main_forMovie {
 
 
 
-
         // *** Q5 *** //
         // write method to add release year to title and return title, use this method for all movies
         for (Genre g : netflix.getGenreList()) {
