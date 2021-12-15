@@ -58,12 +58,19 @@ public class Main_forMovie {
 
         // *** Q4 *** //
         // create predicate for release date 1990 - 2000, and then chain the predicates for finding movies
-        IntPredicate intPredicate = (x) ->
+        IntPredicate intPredicate1 = (x) ->
         {
-            if (x > 1990 && x < 2000)
+            if (x > 1990)
                 return true;
             return false;
         };
+        IntPredicate intPredicate2 = (x) ->
+        {
+            if (x < 2000)
+                return true;
+            return false;
+        };
+
 
 
 
