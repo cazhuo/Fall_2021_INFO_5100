@@ -8,11 +8,9 @@ public class Main_forMovie {
         // *** Q1 *** //
         // initial setup
         Netflix netflix = new Netflix("Netflix");
-
         // generate genres
         Genre fiction = new Genre();
         Genre action = new Genre();
-
         // generate movies
         String a1 = "Emma";
         String a2 = "Tom";
@@ -26,23 +24,32 @@ public class Main_forMovie {
                 Arrays.asList(a1, a3), "Leslie");
         Movie m4 = new Movie("Spider Man", new GregorianCalendar(2021, Calendar.JULY, 6),
                 Arrays.asList(a2, a4), "Holly");
-
         // add movies to genre
         fiction.getMovieList().add(m1);
         fiction.getMovieList().add(m2);
         action.getMovieList().add(m3);
         action.getMovieList().add(m4);
-
         // add genre to Netflix
         netflix.genreList.add(fiction);
         netflix.genreList.add(action);
 
+
         // *** Q2 *** //
-        // or all movies released before 2000, add the string "(Classic)" to the title
+        // for all movies released before 2000, add the string "(Classic)" to the title
         netflix.getGenreList().stream()
                 .flatMap(movie -> movie.movieList.stream())
                 .filter(date -> date.releaseDate.get(Calendar.YEAR) < 2000 )
-                .forEach(title -> title.setTitle( "Classic " + title.getTitle()));
+                .forEach(title -> title.setTitle( "(Classic) " + title.getTitle()));
+
+
+        // *** Q5 *** //
+        // write method to add release year to title and return title, use this method for all movies
+        for (Genre g : netflix.getGenreList()) {
+            for (Movie m : g.getMovieList()) {
+                m.addReleaseYearToTitle();
+            }
+        }
+
 
         // *** Q6 *** //
         // sort by title
